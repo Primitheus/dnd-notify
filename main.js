@@ -4,6 +4,7 @@ const sound = require("sound-play");
 const chalk = require("chalk");
 
 const success = chalk.green;
+const time = chalk.magenta;
 const fail = chalk.red;
 
 
@@ -11,24 +12,27 @@ const fail = chalk.red;
 const url = 'http://live-server.darkanddarker.net:30000/dc/helloWorld';
 
 // Function to make a request to the URL and check for JSON data
-const refreshAndCheck = () => {
+async function refreshAndCheck() {
+
+    let date = new Date();
+
     request(url, (error, response, body) => {
-      if (!error && response.statusCode === 200) {
+      if (!error && response.statusCode == 200) {
         try {
           const data = JSON.parse(body);
           // Play notification
-          console.log(success("[SUCCESS] Dark and Darker Playtest #5 Online!"));
+          console.log(time('[' + date.toLocaleTimeString() + ']'), success('Dark and Darker Playtest #5 Online!'));
           sound.play('C://sound.mp3');
         } catch (e) {
           console.error(e);
         }
       } else {
-        console.log(fail("[FAIL] Dark and Darker Playtest #5 is still offline."));
+        console.log(time('[' + date.toLocaleTimeString() + ']'), fail("Dark and Darker Playtest #5 is still offline."));
       }
     });
   };
   
 
-
-// Refresh in milliseconds, change for whatever interval you want.
-setInterval(refreshAndCheck, 5000);
+// Refresh in milliseconds (5 minutes).
+refreshAndCheck();
+setInterval(refreshAndCheck, 300000);
