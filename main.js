@@ -30,5 +30,5 @@ const refreshAndCheck = () => {
   
 
 
-// Refresh and check every 5 Minutes
-setInterval(refreshAndCheck, 300000);
+// Refresh in milliseconds, change for whatever interval you want.
+setInterval(refreshAndCheck, 5000);
