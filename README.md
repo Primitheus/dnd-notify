@@ -1,7 +1,7 @@
 # dnd-notify
 Simple app that will notify when the Dark and Darker Servers are online. 
 
-</h1>Installation<h1>
+## Installation
 
 Install NodeJs from their official website.
 
