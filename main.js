@@ -9,7 +9,8 @@ const fail = chalk.red;
 
 
 // URL to refresh
-const url = 'http://live-server.darkanddarker.net:30000/dc/helloWorld';
+const url = 'http://darkanddarker.com/';
+
 
 // Function to make a request to the URL and check for JSON data
 async function refreshAndCheck() {
