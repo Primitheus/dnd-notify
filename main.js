@@ -22,13 +22,13 @@ async function refreshAndCheck() {
         try {
           const data = JSON.parse(body);
           // Play notification
-          console.log(time('[' + date.toLocaleTimeString() + ']'), success('Dark and Darker Playtest #5 Online!'));
+          console.log(time('[' + date.toLocaleTimeString() + ']'), success('Dark and Darker Early Access is probably online!'));
           sound.play('C://sound.mp3');
         } catch (e) {
           console.error(e);
         }
       } else {
-        console.log(time('[' + date.toLocaleTimeString() + ']'), fail("Dark and Darker Playtest #5 is still offline."));
+        console.log(time('[' + date.toLocaleTimeString() + ']'), fail("Dark and Darker Early Access is still offline."));
       }
     });
   };
